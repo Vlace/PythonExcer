@@ -16,8 +16,12 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
-    print(a[2][0])
 
-elmo = ('Elmo', 5, ['hugging', 'being nice'])
-sauron = ('Sauron', 5000, ['killing hobbits', 'chess'])
-gandalf = ('Gandalf', 10000, ['waving wands', 'chess'])
+    for element in a[2]:
+        if element in b[2]:
+            return True
+    return False
+
+# elmo = ('Elmo', 5, ['hugging', 'being nice'])
+# sauron = ('Sauron', 5000, ['killing hobbits', 'chess'])
+# gandalf = ('Gandalf', 10000, ['waving wands', 'chess'])

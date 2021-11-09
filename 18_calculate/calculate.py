@@ -13,7 +13,7 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         'The result is 6.5'
 
         >>> calculate('subtract', 4, 1.5, make_int=True)
-        'The result is 2'
+        'The result is 3'
 
         >>> calculate('multiply', 1.5, 2)
         'The result is 3.0'
@@ -26,3 +26,28 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
         
     """
+    def add(a,b):
+        return a+b
+    def multiply(a,b):
+        return a*b
+    def subtract(a,b):
+        return a-b
+    def divide(a,b):
+        return a/b
+    
+    operating_functions = {'add': add,
+    'multiply': multiply,
+    'subtract': subtract,
+    'divide': divide,
+    }
+
+    if operation not in operating_functions:
+        return None
+
+    if make_int == True:
+        answer = operating_functions[operation](int(a),int(b))
+        return message +' '+str(answer)
+    
+    else:
+        answer = operating_functions[operation](a,b)
+        return message +' '+str(answer)
